@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main>
+        <h1>This keyboard changes the case using capsloack</h1>
+        <div class="container">
+            <div class="row">
+                <div id="q" class="change">Q</div>
+                <div id="w" class="change">W</div>
+                <div id="e" class="change">E</div>
+                <div id="r" class="change">R</div>
+                <div id="t" class="change">T</div>
+                <div id="y" class="change">Y</div>
+                <div id="u" class="change">U</div>
+                <div id="i" class="change">I</div>
+                <div id="o" class="change">O</div>
+                <div id="p" class="change">P</div>
+            </div>
+            <div class="row" id="secondRow">
+                <div id="a" class="change">A</div>
+                <div id="s" class="change">S</div>
+                <div id="d" class="change">D</div>
+                <div id="f" class="change">F</div>
+                <div id="g" class="change">G</div>
+                <div id="h" class="change">H</div>
+                <div id="j" class="change">J</div>
+                <div id="k" class="change">K</div>
+                <div id="l" class="change">L</div>
+            </div>
+            <div class="row">
+                <button type="button" class="caps-lock">caps lock</button>
+                <div id="z" class="change">Z</div>
+                <div id="x" class="change">X</div>
+                <div id="c" class="change">C</div>
+                <div id="v" class="change">V</div>
+                <div id="b" class="change">B</div>
+                <div id="n" class="change">N</div>
+                <div id="m" class="change">M</div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="fotter">
+            <h1>contact</h1>
+            <a href="https://github.com/haregwoinn/usingcapslock.git">see code</a>
+            <a href="https://haregwoinn.github.io/keybord-shortcut/">keyboardsortcut</a>
+            <a href="https://github.com/haregwoinn/keybord-shortcut.git">keyboardsortcut code</a>
+        </div>
+    </footer>
+    <script defer >
+        let one = document.querySelectorAll('.change')
+        let capslock = document.querySelector('.caps-lock')
+        let comp = document.getElementById('q').innerHTML
+        let scomp = comp.toLocaleLowerCase()
+        let clicks = 0
+        function count(){
+                clicks += 1
+
+            }
+        capslock.addEventListener('click', function(){
+            count();
+            for(let i=0; i<one.length; i++){
+                if(clicks%2 == 0){
+                    one[i].innerHTML = one[i].innerHTML.toLocaleLowerCase()
+            }
+            else{
+                one[i].innerHTML = one[i].innerHTML.toLocaleUpperCase()
+                capslock.style.bakgroundColor='green'
+            }
+            
+        }})  
+    </script>
+</body>
+</html>
